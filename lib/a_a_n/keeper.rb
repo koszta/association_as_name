@@ -31,7 +31,7 @@ module AAN
         if element.is_a? Hash
           element.symbolize_keys!
           element = element.to_a.flatten
-        elsif
+        else
           element = [element.to_sym, "#{name}_#{element}".to_sym]
         end
         (AAN::Keeper[current_model][name] ||= []) << element
